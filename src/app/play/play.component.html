@@ -1,0 +1,15 @@
+<h1>Mission {{currentMission}}</h1>
+<div *ngIf="!started; else mission">
+    <div>
+        Thieves {{score.thieves}} X {{score.guardians}} Guardians
+    </div>
+    <button class="btn btn-primary" (click)="started = true">Start Mission</button>
+</div>
+
+<ng-template #mission>
+    ano categoria
+    nome
+    texto
+    <button class="btn btn-primary" (click)="completeMission(teams.Thieves)">Thieves</button>
+    <button class="btn btn-primary" (click)="completeMission(teams.Guardians)">Guardians</button>
+</ng-template>
