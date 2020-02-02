@@ -1,6 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+$th-yellow: #FFD524;
+$th-purple: #290849;
+
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
+    background-image: url(/assets/images/bg.svg);
+    background-repeat: repeat;
+    background-size: 100%;
+}
+
+.mobile-container {
+    max-width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.app-button-style {
+    font-weight: 600;
+    border-radius: 0;
+}
+
+.btn-primary {
+    @extend .app-button-style;
+    background-color: $th-yellow;
+    color: $th-purple;
+}
+
+.btn-secondary {
+    @extend .app-button-style;
+    background-color: transparent;
+    color: $th-yellow;
 }
