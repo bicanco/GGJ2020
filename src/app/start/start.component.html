@@ -1,13 +1,14 @@
-<p>Choose Game Duration</p>
+<h1>CHOOSE GAME DURATION</h1>
 
-<div>
-    <button type="button" class="btn btn-primary" [routerLink]="['..','play',gameModes.Fast]">
+<div class="d-flex flex-column px-4 align-items-center">
+    <button type="button" class="col-12 btn btn-primary btn-lg" [routerLink]="['..','play',gameModes.Fast]">
         Fast
     </button>
-    <button type="button" class="btn btn-primary" [routerLink]="['..','play',gameModes.Regular]">
+    <button type="button" class="col-12 btn btn-primary btn-lg" [routerLink]="['..','play',gameModes.Regular]">
         Regular
     </button>
-    <button type="button" class="btn btn-primary" [routerLink]="['..','play',gameModes.Legend]">
+    <button type="button" class="col-12 btn btn-primary btn-lg" [routerLink]="['..','play',gameModes.Legend]">
         Legend
     </button>
+    <button type="button" class="col-5 btn btn-primary" routerLink="/../">BACK</button>
 </div>

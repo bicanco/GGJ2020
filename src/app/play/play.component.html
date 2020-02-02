@@ -1,17 +1,39 @@
-<h1>Mission {{currentMission}}</h1>
+<h1>MISSION {{currentMission}}</h1>
 <div *ngIf="!started; else mission">
     <div>
-        Thieves {{score.thieves}} X {{score.guardians}} Guardians
+        <div class="d-flex score justify-content-center">
+            <span class="team mr-1 px-2">THIEVES</span>
+            {{score.thieves}}X{{score.guardians}}
+            <span class="team ml-1 px-2">GUARDIANS</span>
+        </div>
     </div>
-    <button class="btn btn-primary" (click)="started = true">Start Mission</button>
+    <p class="container mt-3"><strong>ONLY THE CAPITAINS</strong> CAN LOOK AT THE SCREEN!</p>
+    <div class="d-flex flex-column px-4 align-items-center">
+        <button type="button" class="btn btn-primary" (click)="started = true">START MISSION</button>
+    </div>
 </div>
 
 <ng-template #mission>
-    <div>Century: {{this.currentMissionData.century}} Category: {{this.currentMissionData.category}}</div>
-    <div>{{this.currentMissionData.answer}}</div>
-    <div>{{this.currentMissionData.help}}</div>
-    <div>
-        <button class="btn btn-primary" (click)="completeMission(teams.Thieves)">Thieves</button>
-        <button class="btn btn-primary" (click)="completeMission(teams.Guardians)">Guardians</button>
+    <div class="mt-3">
+        <div class="row">
+            <div class="col-5">
+                CENTURY<br>
+                <span class="btn btn-primary w-100">{{this.currentMissionData.century}}</span>
+            </div>
+            <div class="col-7">
+                SEARCHING<br>
+                <span class="btn btn-secondary w-100">{{this.currentMissionData.category}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h2>{{this.currentMissionData.answer}}</h2>
+        <p class="help">{{this.currentMissionData.help}}</p>
+    </div>
+    <div class="d-flex flex-fill">
+        <button type="button" class="btn btn-primary col-5 mr-auto"
+            (click)="completeMission(teams.Thieves)">Thieves</button>
+        <button type="button" class="btn btn-primary col-5 ml-auto"
+            (click)="completeMission(teams.Guardians)">Guardians</button>
     </div>
 </ng-template>

@@ -11,14 +11,14 @@ import { GameModes, Teams } from '@utils';
 })
 export class PlayComponent implements OnInit {
 
-  protected started: boolean;
-  protected currentMission = 1;
-  protected currentMissionData: MissionData;
-  protected score: { thieves: number, guardians: number } = {
+  started: boolean;
+  currentMission = 1;
+  currentMissionData: MissionData;
+  score: { thieves: number, guardians: number } = {
     thieves: 0,
     guardians: 0,
   };
-  protected teams = Teams;
+  teams = Teams;
   private victoriesToWin: number;
 
   constructor(
@@ -46,7 +46,7 @@ export class PlayComponent implements OnInit {
     }
   }
 
-  protected completeMission(winner: Teams) {
+  completeMission(winner: Teams) {
     this.currentMission++;
     this.currentMissionData = this.missionService.getMissionData();
     this.started = false;

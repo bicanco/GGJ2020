@@ -9,7 +9,7 @@ import { Teams } from '@utils';
 })
 export class EndGameComponent implements OnInit {
 
-  protected title: string;
+  title: string;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,

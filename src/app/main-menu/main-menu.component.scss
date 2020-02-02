@@ -1,9 +1,14 @@
 .logo {
-    height: 12.5%;
     padding-top: 12.5%;
     padding-bottom: 12.5%;
+    width: 80%;
 }
 
-.btn {
-    font-size: 30px;
+
+@media (min-width: 1000px){
+    .logo {
+        padding-top: 5%;
+        padding-bottom: 8%;
+        width: 60%;
+    }
 }
