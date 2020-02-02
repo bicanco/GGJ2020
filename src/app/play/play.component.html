@@ -7,9 +7,11 @@
 </div>
 
 <ng-template #mission>
-    ano categoria
-    nome
-    texto
-    <button class="btn btn-primary" (click)="completeMission(teams.Thieves)">Thieves</button>
-    <button class="btn btn-primary" (click)="completeMission(teams.Guardians)">Guardians</button>
+    <div>Century: {{this.currentMissionData.century}} Category: {{this.currentMissionData.category}}</div>
+    <div>{{this.currentMissionData.answer}}</div>
+    <div>{{this.currentMissionData.help}}</div>
+    <div>
+        <button class="btn btn-primary" (click)="completeMission(teams.Thieves)">Thieves</button>
+        <button class="btn btn-primary" (click)="completeMission(teams.Guardians)">Guardians</button>
+    </div>
 </ng-template>

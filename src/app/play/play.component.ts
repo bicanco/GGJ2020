@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MissionData } from '@models';
+import { MissionService } from '@services';
 import { GameModes, Teams } from '@utils';
 
 @Component({
@@ -11,6 +13,7 @@ export class PlayComponent implements OnInit {
 
   protected started: boolean;
   protected currentMission = 1;
+  protected currentMissionData: MissionData;
   protected score: { thieves: number, guardians: number } = {
     thieves: 0,
     guardians: 0,
@@ -20,10 +23,13 @@ export class PlayComponent implements OnInit {
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
+    private readonly missionService: MissionService,
     private readonly router: Router,
   ) { }
 
   ngOnInit() {
+    this.missionService.reset();
+    this.currentMissionData = this.missionService.getMissionData();
     switch (this.activatedRoute.snapshot.params.mode) {
       case GameModes.Fast.toString():
         this.victoriesToWin = 2;
@@ -42,6 +48,7 @@ export class PlayComponent implements OnInit {
 
   protected completeMission(winner: Teams) {
     this.currentMission++;
+    this.currentMissionData = this.missionService.getMissionData();
     this.started = false;
     switch (winner) {
       case Teams.Guardians:

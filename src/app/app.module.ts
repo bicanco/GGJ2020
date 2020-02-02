@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { services } from '@services';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { HowToPlayComponent } from './how-to-play/how-to-play.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { PlayComponent } from './play/play.component';
 import { StartComponent } from './start/start.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import { StartComponent } from './start/start.component';
     StartComponent,
     PlayComponent,
     EndGameComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ...services,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

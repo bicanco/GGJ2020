@@ -22,7 +22,7 @@ export class EndGameComponent implements OnInit {
         this.title = `The <strong>GUARDIANS</strong> repaired history!`;
         break;
       case Teams.Thieves.toString():
-        this.title = `The <strong>THIEVES</strong> stoled time!`;
+        this.title = `The <strong>THIEVES</strong> stole time!`;
         break;
       default:
         this.router.navigate(['']);

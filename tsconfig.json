@@ -21,6 +21,12 @@
     "paths": {
       "@utils": [
         "src/app/utils"
+      ],
+      "@models": [
+        "src/app/models"
+      ],
+      "@services": [
+        "src/app/services"
       ]
     }
   },
